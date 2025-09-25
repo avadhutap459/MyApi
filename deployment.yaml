@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myapi-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myapi
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapi
-        image: myapi:1.0  # <-- replace with your built image
+        image: <dockerhub-username>/myapi:1.0
         ports:
         - containerPort: 80

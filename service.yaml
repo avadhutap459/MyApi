@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: myapi-service
 spec:
-  type: NodePort
   selector:
     app: myapi
+  type: NodePort
   ports:
-  - port: 80         # Service port inside cluster
-    targetPort: 80   # Container port
-    nodePort: 30080  # Port exposed on each node (must be 30000-32767)
+    - protocol: TCP
+      port: 80       # Internal port
+      targetPort: 80 # Container port
+      nodePort: 30080 # External port (must be 30000-32767)
