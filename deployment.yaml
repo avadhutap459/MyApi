@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
       - name: myapi
-        image: myapi:1.0
-        imagePullPolicy: IfNotPresent
+        image: myapi:1.0   # Push to registry if needed
         ports:
         - containerPort: 80
 ---
